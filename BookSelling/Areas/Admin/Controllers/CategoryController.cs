@@ -3,10 +3,13 @@ using BookSelling.DataAccess.Repository.IRespository;
 using BookSelling.Models;
 using BookSelling.DataAccess.Data;
 using BookSelling.DataAccess.IRespository;
+using Microsoft.AspNetCore.Authorization;
+using BookSelling.Utility;
 
 namespace BookSelling.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SD.Role_Admin)]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
