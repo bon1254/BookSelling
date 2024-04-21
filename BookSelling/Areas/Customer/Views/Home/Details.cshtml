@@ -14,8 +14,8 @@
             <div class="py-3">
                 <div class="row">
                     <div asp-action="Index" class="col-6 col-md-2 offset-lg-1 pb-1">
-                        <a class="btn btn-outline-primary bg-gradient mb-5 fw-semibold btn-sm text-uppercase">
-                            <small>Back to home</small>
+                        <a asp-action="Index" class="btn btn-outline-primary bg-gradient mb-5 fw-semibold btn-sm text-uppercase">
+                            <small>返回首頁</small>
                         </a>
                     </div>
                 </div>
@@ -24,16 +24,15 @@
                         <img src="@Model.ImageUrl" width="100%" class="rounded" />
                     </div>
                     <div class="col-12 col-lg-6 offset-lg-1">
-
                         <div class="col-12 col-md-6 pb-4">
                             <span class="badge">@Model.Category.Name</span>
                         </div>
                         <div class="row ps-2">
-                            <h6 class="text-dark text-opacity-50 ">ISBN : ISBN</h6>
+                            <h6 class="text-dark text-opacity-50 ">ISBN : @Model.ISBN</h6>
                         </div>
                         <div class="row ps-2">
                             <h6 class="text-dark text-opacity-50  pb-2">
-                                List Price:
+                                表定價格:
                                 <span class="text-decoration-line-through">
                                     @Model.ListPrice.ToString("c")
                                 </span>
@@ -41,7 +40,7 @@
                         </div>
                         <div class="row text-center ps-2">
                             <div class="p-1 col-3 col-lg-2 bg-white border-bottom">
-                                <div class="text-dark text-opacity-50 fw-semibold">Quantity</div>
+                                <div class="text-dark text-opacity-50 fw-semibold">份量</div>
                             </div>
                             <div class="p-1 col-3 col-lg-2 bg-white border-bottom">
                                 <div class="text-dark text-opacity-50 fw-semibold">1-50</div>
@@ -55,7 +54,7 @@
                         </div>
                         <div class="row text-center ps-2">
                             <div class="p-1 col-3 col-lg-2 bg-white text-warning fw-bold">
-                                <div>Price</div>
+                                <div>價格</div>
                             </div>
                             <div class="p-1 col-3 col-lg-2 bg-white text-warning fw-bold">
                                 <div>@Model.Price.ToString("c")</div>
@@ -75,7 +74,7 @@
                                 <div class="input-group mb-3">
                                     <span class="input-group-text bg-primary text-white border-0 fw-semibold"
                                           id="inputGroup-sizing-default">
-                                        Count
+                                        數量
                                     </span>
                                     <input type="number" value="1" class="form-control text-end"
                                            aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
@@ -87,7 +86,7 @@
                             <div class="col-12 col-md-6 pb-1">
                                 <button type="submit" disabled
                                         class="btn btn-primary bg-gradient  w-100 py-2 text-uppercase fw-semibold">
-                                    Add to Cart (Comming Soon...)
+                                    加入購物車 (敬請期待...)
                                 </button>
                             </div>
                         </div>

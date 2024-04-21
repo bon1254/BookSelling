@@ -1,20 +1,18 @@
 ﻿var dataTable;
 
-$(function () {
+$(document).ready(function () {
     loadDataTable();
 });
 
 function loadDataTable() {
     dataTable = $('#tblData').DataTable({
-        "ajax": {
-            url: '/Admin/Product/GetAll',
-        },
-        columns: [
-            { data: 'title', width: '15%' },
-            { data: 'isbn', width: '15%' },
-            { data: 'listPrice', width: '15%' },
-            { data: 'author', width: '15%' },
-            { data: 'category.name', width: '15%' },
+        "ajax": { url: '/admin/product/getall' },
+        "columns": [
+            { data: 'title', "width": "25%" },
+            { data: 'isbn', "width": "15%" },
+            { data: 'listPrice', "width": "15%", className: 'dt-body-left' },
+            { data: 'author', "width": "25%" },
+            { data: 'category.name', "width": "15%" },
             {
                 data: 'id',
                 "render": function (data) {
@@ -23,21 +21,26 @@ function loadDataTable() {
                         <a onClick=Delete('/admin/product/delete/${data}') class="btn btn-danger mx-2"><i class="bi bi-trash-fill"></i>Delete</a>
                         </div>`
                 },
-                width: '25%'
+                "width": "25%"
             }
-        ]
+        ],
+        "createdRow": function (row, data, dataIndex) {
+            // 移除所有<td>元素的class屬性
+            $('td', row).removeAttr('class');
+        }
     });
 }
 
 function Delete(url) {
     Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        icon: "warning",
+        title: "是否確定刪除?",
+        text: "你將無法復原此動作!",
+        icon: "警告",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!"
+        confirmButtonText: "是的，請刪除!",
+        cancelButtonText: "不, 請取消!",
     }).then((result) => {
         if (result.isConfirmed) {
             $.ajax({
