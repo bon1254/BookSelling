@@ -30,8 +30,8 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="Customer" asp-controller="Home" asp-action="Privacy">隱私權</a>
                         </li>
-                        @if (User.IsInRole(SD.Role_Admin))
-                        {
+                       @*  @if (User.IsInRole(SD.Role_Admin))
+                        { *@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     內容管理
@@ -43,10 +43,13 @@
                                     <li class="nav-item">
                                         <a class="nav-link text-dark" asp-area="Admin" asp-controller="Product" asp-action="Index">產品</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="Admin" asp-controller="Company" asp-action="Index">公司</a>
+                                    </li>
                                     <li><hr class="dropdown-divider"></li>
                                 </ul>
                             </li>
-                        }
+                        @* } *@
                     </ul>
                     <partial name="_LoginPartial"/>
                 </div>

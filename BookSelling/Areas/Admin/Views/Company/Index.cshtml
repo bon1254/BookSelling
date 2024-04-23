@@ -1,0 +1,38 @@
+﻿
+<div class="card shadow border-0 my-4">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">公司列表</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <div class="row pb-3">
+            <div class="col-6">
+
+            </div>
+            <div class="col-6 text-end">
+                <a asp-controller="Company" asp-action="Upsert" class="btn btn-primary">
+                    <i class="bi bi-plus-circle"></i> 建立新的公司
+                </a>
+            </div>
+        </div>
+
+        <table id="tblData" class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>名稱 (Name)</th>
+                    <th>地址 (Address)</th>
+                    <th>城市 (City)</th>
+                    <th>州 (State)</th>
+                    <th style="text-align: left;">手機號碼 (Phone Number)</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/company.js"></script>
+}
