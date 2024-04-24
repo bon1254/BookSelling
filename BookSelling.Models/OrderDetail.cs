@@ -20,7 +20,7 @@ namespace BookSelling.Models
 
         [Required]
         public int ProductId { get; set; }
-        [ForeignKey("OrderHeaderId")]
+        [ForeignKey("ProductId")]
         [ValidateNever]
         public Product Product { get; set; }
 
