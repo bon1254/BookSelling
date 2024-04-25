@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using BookSelling.Models;
 using BookSelling.DataAccess.IRespository;
+using Microsoft.AspNetCore.Authorization;
+using BookSelling.Utility;
 
 namespace BookSelling.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    //[Authorize(Roles = SD.Role_Admin)]
+    [Authorize(Roles = SD.Role_Admin)]
     public class CompanyController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;

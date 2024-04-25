@@ -24,5 +24,7 @@ namespace BookSelling.Utility
 		public const string PaymentStatusApproved = "Approved";  //付款被批准
 		public const string PaymentStatusDelayedPayment = "ApprovedForDelayedPayment"; //付款已經被批准，但是付款延遲支付
 		public const string PaymentStatusRejected = "Rejected"; //付款被拒絕
+
+        public const string SessionCart = "SessionShoppingCart";
 	}
 }
