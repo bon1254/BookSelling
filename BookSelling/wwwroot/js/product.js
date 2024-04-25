@@ -23,11 +23,7 @@ function loadDataTable() {
                 },
                 "width": "25%"
             }
-        ],
-        "createdRow": function (row, data, dataIndex) {
-            // 移除所有<td>元素的class屬性
-            $('td', row).removeAttr('class');
-        }
+        ]
     });
 }
 
