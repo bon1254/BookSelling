@@ -3,6 +3,7 @@ using BookSelling.Models;
 using BookSelling.Models.ViewModels;
 using BookSelling.Utility;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Stripe;
 using Stripe.Checkout;
@@ -15,11 +16,13 @@ namespace BookSelling.Areas.Customer.Controllers
     public class CartController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IEmailSender _emailSender;
         [BindProperty]
         public ShoppingCartVM ShoppingCartVM { get; set; }
-        public CartController(IUnitOfWork unitOfWork)
+        public CartController(IUnitOfWork unitOfWork, IEmailSender emailSender)
         {
             _unitOfWork = unitOfWork;
+            _emailSender = emailSender;
         }
 
         public IActionResult Index()
@@ -178,6 +181,9 @@ namespace BookSelling.Areas.Customer.Controllers
                 }
                 HttpContext.Session.Clear();
             }
+
+            _emailSender.SendEmailAsync(orderHeader.ApplicationUser.Email, "新訂單 - Jimmy Kuo",
+                $"<p>新訂單成立 - {orderHeader.Id}</p>");
 
             List<ShoppingCart> shoppingCarts = _unitOfWork.ShoppingCart.
                 GetAll(u => u.ApplicationUserId == orderHeader.ApplicationUserId).ToList();
