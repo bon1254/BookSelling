@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using BookSelling.DataAccess.Repository.IRespository;
 using BookSelling.Models;
 using BookSelling.DataAccess.Data;
-using BookSelling.DataAccess.IRespository;
 using Microsoft.AspNetCore.Authorization;
 using BookSelling.Utility;
+using BookSelling.DataAccess.Repostiory.IRepostiory;
 
 namespace BookSelling.Areas.Admin.Controllers
 {

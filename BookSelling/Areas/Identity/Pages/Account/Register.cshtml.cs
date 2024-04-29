@@ -11,7 +11,7 @@ using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
 using BookSelling.DataAccess;
-using BookSelling.DataAccess.IRespository;
+using BookSelling.DataAccess.Repostiory.IRepostiory;
 using BookSelling.Models;
 using BookSelling.Utility;
 using Microsoft.AspNetCore.Authentication;

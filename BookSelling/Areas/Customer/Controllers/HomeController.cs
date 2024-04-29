@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using BookSelling.Models;
 using System.Diagnostics;
-using BookSelling.DataAccess.IRespository;
 using System.Collections;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 using BookSelling.Utility;
+using BookSelling.DataAccess.Repostiory.IRepostiory;
 
 namespace BookSelling.Areas.Customer.Controllers
 {
@@ -24,7 +24,7 @@ namespace BookSelling.Areas.Customer.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeProperties: "Category");
+            IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeProperties: "Category,ProductImages");
             return View(productList);
         }
 
@@ -32,7 +32,7 @@ namespace BookSelling.Areas.Customer.Controllers
         {
             ShoppingCart cart = new()
             {
-                Product = _unitOfWork.Product.Get(u => u.Id == productId, includeProperties: "Category"),
+                Product = _unitOfWork.Product.Get(u => u.Id == productId, includeProperties: "Category,ProductImages"),
                 Count = 1,
                 ProductId = productId
             };

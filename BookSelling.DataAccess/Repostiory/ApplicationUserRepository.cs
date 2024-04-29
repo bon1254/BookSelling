@@ -1,9 +1,9 @@
-﻿using BookSelling.DataAccess.Repository.IRespository;
-using BookSelling.DataAccess.Data;
+﻿using BookSelling.DataAccess.Data;
 using BookSelling.Models;
 using static System.Net.Mime.MediaTypeNames;
+using BookSelling.DataAccess.Repostiory.IRepostiory;
 
-namespace BookSelling.DataAccess.Repository
+namespace BookSelling.DataAccess.Repostiory
 {
     public class ApplicationUserRepository : Repository<ApplicationUser>, IApplicationUserRepository
     {

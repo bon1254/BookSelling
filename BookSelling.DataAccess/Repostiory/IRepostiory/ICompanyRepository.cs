@@ -1,6 +1,6 @@
 ﻿using BookSelling.Models;
 
-namespace BookSelling.DataAccess.Repository.IRespository
+namespace BookSelling.DataAccess.Repostiory.IRepostiory
 {
     public interface ICompanyRepository : IRepository<Company>
     {

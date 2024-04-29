@@ -1,11 +1,9 @@
 ﻿using BookSelling.DataAccess.Data;
-using BookSelling.DataAccess.IRespository;
-using BookSelling.DataAccess.Repository;
-using BookSelling.DataAccess.Repository.IRespository;
+using BookSelling.DataAccess.Repostiory.IRepostiory;
 using BookSelling.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BookSelling.DataAccess
+namespace BookSelling.DataAccess.Repostiory
 {
     public class UnitOfWork : IUnitOfWork
     {
@@ -17,10 +15,11 @@ namespace BookSelling.DataAccess
         public IApplicationUserRepository ApplicationUser { get; set; }
         public IOrderHeaderRepository OrderHeader { get; set; }
         public IOrderDetailRepository OrderDetail { get; set; }
-
+        public IProductImageRepository ProductImage { get; set; }
         public UnitOfWork(ApplicationDbContext db)
         {
             _db = db;
+            ProductImage = new ProdcutImageRepository(_db);
             ApplicationUser = new ApplicationUserRepository(_db);
             ShoppingCart = new ShoppingCartRepository(_db);
             Category = new CategoryRepository(_db);

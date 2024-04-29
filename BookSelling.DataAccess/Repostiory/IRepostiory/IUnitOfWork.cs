@@ -1,11 +1,10 @@
-﻿using BookSelling.DataAccess.Repository.IRespository;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookSelling.DataAccess.IRespository
+namespace BookSelling.DataAccess.Repostiory.IRepostiory
 {
     public interface IUnitOfWork
     {
@@ -17,6 +16,8 @@ namespace BookSelling.DataAccess.IRespository
         IApplicationUserRepository ApplicationUser { get; }
         IOrderDetailRepository OrderDetail { get; }
         IOrderHeaderRepository OrderHeader { get; }
+
+        IProductImageRepository ProductImage { get; }
         void Save();
     }
 }

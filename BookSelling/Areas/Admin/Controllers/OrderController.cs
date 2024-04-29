@@ -1,4 +1,4 @@
-﻿using BookSelling.DataAccess.IRespository;
+﻿using BookSelling.DataAccess.Repostiory.IRepostiory;
 using BookSelling.Models;
 using BookSelling.Models.ViewModels;
 using BookSelling.Utility;
@@ -12,7 +12,7 @@ using System.Security.Claims;
 
 namespace BookSelling.Areas.Admin.Controllers
 {
-	[Area("admin")]
+    [Area("admin")]
     [Authorize]
 	public class OrderController : Controller
 	{

@@ -1,8 +1,8 @@
-﻿using BookSelling.DataAccess.Repository.IRespository;
-using BookSelling.DataAccess.Data;
+﻿using BookSelling.DataAccess.Data;
 using BookSelling.Models;
+using BookSelling.DataAccess.Repostiory.IRepostiory;
 
-namespace BookSelling.DataAccess.Repository
+namespace BookSelling.DataAccess.Repostiory
 {
     public class ProductRepository : Repository<Product>, IProductRepository
     {
@@ -27,11 +27,11 @@ namespace BookSelling.DataAccess.Repository
                 objFromDb.Description = obj.Description;
                 objFromDb.CategoryId = obj.CategoryId;
                 objFromDb.Author = obj.Author;
-
-                if(obj.ImageUrl != null)
-                {
-                    objFromDb.ImageUrl = obj.ImageUrl;
-                }
+                objFromDb.ProductImages = obj.ProductImages;
+                //if (obj.ImageUrl != null)
+                //{
+                //    objFromDb.ImageUrl = obj.ImageUrl;
+                //}
             }
         }
     }

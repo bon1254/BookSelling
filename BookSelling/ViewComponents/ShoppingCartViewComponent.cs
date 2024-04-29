@@ -1,4 +1,4 @@
-﻿using BookSelling.DataAccess.IRespository;
+﻿using BookSelling.DataAccess.Repostiory.IRepostiory;
 using BookSelling.Utility;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;

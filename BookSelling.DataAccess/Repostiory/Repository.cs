@@ -1,18 +1,18 @@
 ﻿using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
-using BookSelling.DataAccess.Repository.IRespository;
 using BookSelling.DataAccess.Data;
+using BookSelling.DataAccess.Repostiory.IRepostiory;
 
-namespace BookSelling.DataAccess.Repository
+namespace BookSelling.DataAccess.Repostiory
 {
     public class Repository<T> : IRepository<T> where T : class
     {
         private readonly ApplicationDbContext _db;
         internal DbSet<T> dbSet;
-        public Repository(ApplicationDbContext db) 
+        public Repository(ApplicationDbContext db)
         {
             _db = db;
-            this.dbSet = _db.Set<T>();
+            dbSet = _db.Set<T>();
             _db.Products.Include(u => u.Category).Include(u => u.CategoryId);
         }
 
@@ -27,11 +27,11 @@ namespace BookSelling.DataAccess.Repository
 
             if (tracked)
             {
-               query = dbSet;
+                query = dbSet;
             }
             else
             {
-               query = dbSet.AsNoTracking();
+                query = dbSet.AsNoTracking();
             }
 
             query = query.Where(filter);
@@ -49,8 +49,8 @@ namespace BookSelling.DataAccess.Repository
         public IEnumerable<T> GetAll(Expression<Func<T, bool>>? filter, string? includeProperties = null)
         {
             IQueryable<T> query = dbSet;
-            if(filter != null)
-            { 
+            if (filter != null)
+            {
                 query = query.Where(filter);
             }
             if (!string.IsNullOrEmpty(includeProperties))

@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using BookSelling.DataAccess.Data;
-using BookSelling.DataAccess.IRespository;
-using BookSelling.DataAccess;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using BookSelling.Utility;
 using Stripe;
 using BookSelling.DataAccess.DbInitializer;
+using BookSelling.DataAccess.Repostiory;
+using BookSelling.DataAccess.Repostiory.IRepostiory;
 
 var builder = WebApplication.CreateBuilder(args);
 
