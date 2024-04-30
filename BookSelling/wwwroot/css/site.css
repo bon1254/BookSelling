@@ -545,3 +545,8 @@ bg-success {
         background-color: #578553;
         border-color: #578553;
     }
+
+.black-Arrow-button {
+    background-color: rgba(0, 0, 0, .05); /* Adjust the alpha value as needed */
+    /* Add any other styles you want */
+}
