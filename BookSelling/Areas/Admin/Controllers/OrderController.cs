@@ -63,7 +63,7 @@ namespace BookSelling.Areas.Admin.Controllers
             _unitOfWork.OrderHeader.Update(orderHeaderFromDb);
             _unitOfWork.Save();
 
-            TempData["Success"] = "Order Details Updated Sucessfully!";
+            TempData["Success"] = "訂單詳情已成功更新!";
 
             return RedirectToAction(nameof(Details), new { orderId = orderHeaderFromDb.Id });
         }
@@ -75,7 +75,7 @@ namespace BookSelling.Areas.Admin.Controllers
             _unitOfWork.OrderHeader.UpdateStatus(OrderVM.OrderHeader.Id, SD.StatusInProcess);
             _unitOfWork.Save();
 
-            TempData["Success"] = "Order Details Updated Sucessfully!";
+            TempData["Success"] = "訂單詳情已成功更新!";
             return RedirectToAction(nameof(Details), new { orderId = OrderVM.OrderHeader.Id });
         }
 
@@ -97,7 +97,7 @@ namespace BookSelling.Areas.Admin.Controllers
             _unitOfWork.OrderHeader.Update(orderHeader);
             _unitOfWork.Save();
 
-            TempData["Success"] = "Order Shipped Sucessfully!";
+            TempData["Success"] = "訂單已成功發貨!";
             return RedirectToAction(nameof(Details), new { orderId = OrderVM.OrderHeader.Id });
         }
 
@@ -126,7 +126,7 @@ namespace BookSelling.Areas.Admin.Controllers
             }
 
             _unitOfWork.Save();
-            TempData["Success"] = "Order Cancelled Sucessfully!";
+            TempData["Success"] = "訂單取消成功!";
             return RedirectToAction(nameof(Details), new { orderId = OrderVM.OrderHeader.Id });
         }
 

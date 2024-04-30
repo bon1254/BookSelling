@@ -28,7 +28,7 @@
 							</div>
 							<div class="row my-1">
 								<div class="col-3">
-									<label>收件人名稱 (Name)</label>
+									<label>收件人名稱</label>
 								</div>
 								<div class="col-9">
 									<input asp-for="OrderHeader.Name" class="form-control" />
@@ -37,7 +37,7 @@
 							</div>
 							<div class="row my-1">
 								<div class="col-3">
-									<label>手機號碼 (Phone Number)</label>
+									<label>手機號碼</label>
 								</div>
 								<div class="col-9">
 									<input asp-for="OrderHeader.PhoneNumber" class="form-control" />
@@ -46,7 +46,7 @@
 							</div>
 							<div class="row my-1">
 								<div class="col-3">
-									<label>地址 (Street Address)</label>
+									<label>地址</label>
 								</div>
 								<div class="col-9">
 									<input asp-for="OrderHeader.StreetAddress" class="form-control" />
@@ -55,7 +55,7 @@
 							</div>
 							<div class="row my-1">
 								<div class="col-3">
-									<label>城市 (City)</label>
+									<label>城市</label>
 								</div>
 								<div class="col-9">
 									<input asp-for="OrderHeader.City" class="form-control" />
@@ -64,7 +64,7 @@
 							</div>
 							<div class="row my-1">
 								<div class="col-3">
-									<label>國家 (State)</label>
+									<label>國家</label>
 								</div>
 								<div class="col-9">
 									<input asp-for="OrderHeader.State" class="form-control" />
@@ -73,7 +73,7 @@
 							</div>
 							<div class="row my-1">
 								<div class="col-3">
-									<label>郵遞區號 (Postal Code)</label>
+									<label>郵遞區號</label>
 								</div>
 								<div class="col-9">
 									<input asp-for="OrderHeader.PostalCode" class="form-control" />
@@ -83,7 +83,7 @@
 						</div>
 						<div class="col-12 col-lg-5 offset-lg-1">
 							<h4 class="d-flex justify-content-between align-items-center mb-3">
-								<span class="text-info">Order Summary:</span>
+								<span class="text-info">訂單總額:</span>
 							</h4>
 							<ul class="list-group mb-3">
 								@foreach(var details in Model.ShoppingCartList)
@@ -114,7 +114,7 @@
 						</p>
 					</div>
 					<div class="col-12 col-md-4">
-						<button type="submit" value="Place Order" class="btn btn-primary form-control">Place Order</button>
+						<button type="submit" value="Place Order" class="btn btn-primary form-control">下訂單</button>
 					</div>
 				</div>
 			</div>

@@ -39,16 +39,16 @@
             <span></span>
             <ul class="list-group list-group-horizontal-sm">
                 <a style="text-decoration:none;" asp-controller="Order" asp-route-status="inprocess">
-                <li class="list-group-item @inprocess">In Process</li>
+                <li class="list-group-item @inprocess">處理中</li>
                 </a>
                 <a style="text-decoration:none;" asp-controller="Order" asp-route-status="pending">
-                <li class="list-group-item @pending">Payment Pending</li>
+                <li class="list-group-item @pending">待付款</li>
                 </a>
                 <a style="text-decoration:none;" asp-controller="Order" asp-route-status="completed">
-                <li class="list-group-item @completed">Completed</li>
+                <li class="list-group-item @completed">完成</li>
                 </a>
                 <a style="text-decoration:none;" asp-controller="Order" asp-route-status="approved">
-                <li class="list-group-item @approved">Approved</li>
+                <li class="list-group-item @approved">批准</li>
                 </a>
                 <a style="text-decoration:none;" asp-controller="Order" asp-route-status="all">
                 <li class="list-group-item @all">All</li>
@@ -59,11 +59,11 @@
             <thead>
                 <tr>
                     <th style="text-align: left">ID</th>
-                    <th>Name</th>
-                    <th style="text-align: left">Phone Number</th>
-                    <th>Email</th>
-                    <th>Status</th>
-                    <th style="text-align: left">Total</th>
+                    <th>名稱</th>
+                    <th style="text-align: left">電話號碼</th>
+                    <th>信箱</th>
+                    <th>狀態</th>
+                    <th style="text-align: left">總價</th>
                 </tr>
             </thead>
         </table>

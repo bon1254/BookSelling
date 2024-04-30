@@ -120,7 +120,7 @@ namespace BookSelling.Areas.Admin.Controllers
                 }
 
             
-                TempData["success"] = "商品建立/更新成功!";
+                TempData["success"] = "產品建立/更新成功!";
                 return RedirectToAction("Index");
             }
             else
@@ -159,7 +159,7 @@ namespace BookSelling.Areas.Admin.Controllers
             {
                 _unitOfWork.Product.Update(obj);
                 _unitOfWork.Save();
-                TempData["success"] = "Product updated successfully";
+                TempData["success"] = "產品更新成功!";
                 return RedirectToAction("Index");
             }
             return View();

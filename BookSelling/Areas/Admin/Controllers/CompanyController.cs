@@ -51,7 +51,7 @@ namespace BookSelling.Areas.Admin.Controllers
                 }
 
                 _unitOfWork.Save();
-                TempData["success"] = "Company created successfully";
+                TempData["success"] = "公司建立成功!";
                 return RedirectToAction("Index");
             }
             else
@@ -84,7 +84,7 @@ namespace BookSelling.Areas.Admin.Controllers
             {
                 _unitOfWork.Company.Update(obj);
                 _unitOfWork.Save();
-                TempData["success"] = "Company updated successfully";
+                TempData["success"] = "公司更新成功!";
                 return RedirectToAction("Index");
             }
             return View();
